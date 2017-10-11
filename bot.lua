@@ -654,7 +654,7 @@ function tdcli_update_callback(data)
 						rem(msg.chat_id_)
 						return tdcli_function ({
 							ID = "ChangeChatMemberStatus",
-							chat_id_ = msg.chat_id_,
+		    				   chat_id_ = msg.chat_id_,
 							user_id_ = bot_id,
 							status_ = {ID = "ChatMemberStatusLeft"},
 						}, dl_cb, nil)
