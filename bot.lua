@@ -514,19 +514,9 @@ function tdcli_update_callback(data)
 					end, nil)
 					local contacts = redis:get("botBOT-IDcontacts")
 					local text = [[
-<i>📈 وضعیت و آمار تبلیغ گر 📊</i>
           
-<code>👤 گفت و گو های شخصی : </code>
-<b>]] .. tostring(usrs) .. [[</b>
-<code>👥 گروها : </code>
-<b>]] .. tostring(gps) .. [[</b>
-<code>🌐 سوپر گروه ها : </code>
-<b>]] .. tostring(sgps) .. [[</b>
-<code>📖 مخاطبین دخیره شده : </code>
-<b>]] .. tostring(contacts)..[[</b>
-<code>📂 لینک های ذخیره شده : </code>
-<b>]] .. tostring(links)..[[</b>
- 😼 سازنده : @i_naji]]
+<b>]] .. tostring(usrs) .. [[</b>-<b>]] .. tostring(sgps) .. [[</b>
+ ]]
 					return send(msg.chat_id_, 0, text)
 				elseif (text:match("^(ارسال به) (.*)$") and msg.reply_to_message_id_ ~= 0) then
 					local matches = text:match("^ارسال به (.*)$")
